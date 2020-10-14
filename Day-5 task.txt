@@ -1,0 +1,59 @@
+Q1. Get all the countries with population of less than 2 lacs using Filter function
+ var request=new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload=function(){
+	var data=JSON.parse(this.response);
+	var population=data.filter(ele => ele.population<200000);
+	console.log(population);
+};
+Q2. Get all the countries in the region of asia using filter function
+var req = newXMLHttpRequest();
+req.open('GET','https://restcountries.eu/rest/v2/all', true)
+req.send();
+req.onload=function(){
+var data = JSON.parse(this.response)
+var asiacountries = data.filter(ele => ele.region === 'Asia')
+console.log(asia countries);
+}
+Q3.Print the following details name, capital, flag using forEach function
+var req = new XMLHttpRequest();
+req.open('GET','https://restcountries.eu/rest/v2/all', true)
+req.send()
+req.onload=function(){
+var data = JSON.parse(this.response)
+var details = data.forEach(ele=>console.log("Name:"+ele.name+" Capital:"+ele.capital+" Flag:"+ele.flag));
+console.log(details)
+}
+
+
+
+
+
+Q4.Print the total population of countries using reduce function
+var req = new XMLHttpRequest();
+req.open('GET','https://restcountries.eu/rest/v2/all', true)
+req.send()
+req.onload=function(){
+var data = JSON.parse(this.response)
+var total = data.reduce((tot,ele)=> {return tot+ele.population},0);
+console.log(total)
+}
+Q5.Print population in asia region using filter and reduce
+var req = new XMLHttpRequest();
+req.open('GET','https://restcountries.eu/rest/v2/all', true)
+req.send();
+req.onload=function(){
+var data = JSON.parse(this.response)
+var asiacountries = data.filter(ele => ele.region === 'Asia')
+var total = asiacountries.reduce((tot,ele)=>{return tot+ele.population},0)
+console.log(total)}
+Q6.
+var req = new XMLHttpRequest();
+req.open('GET','https://restcountries.eu/rest/v2/all', true)
+req.send();
+req.onload=function(){
+var data = JSON.parse(this.response)
+var dollars = data.filter(ele => ele.currencies === 'USD')
+
+console.log(dollars)}
